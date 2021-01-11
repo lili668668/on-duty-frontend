@@ -26,12 +26,12 @@ const EmployeeTable: React.FC<PropTypes> = (props) => {
   const { reload, reloadFlag } = props
   const [employees, setEmployees] = useState<Employee[]>([])
   useEffect(() => {
-    fetch(`http://${process.env.REACT_APP_SERVER_HOST}/employees`)
+    fetch(`${process.env.REACT_APP_SERVER_HOST}/employees`)
       .then((response) => response.json())
       .then((data) => setEmployees(data))
   }, [reloadFlag])
   const handleReorder = useCallback(() => {
-    fetch(`http://${process.env.REACT_APP_SERVER_HOST}/employees/reorder`, {
+    fetch(`${process.env.REACT_APP_SERVER_HOST}/employees/reorder`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',

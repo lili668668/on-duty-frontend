@@ -8,7 +8,7 @@ interface PropTypes {
 const DeleteButton: React.FC<PropTypes> = (props) => {
   const { id, reload } = props
   const handleClick = useCallback(() => {
-    fetch(`http://${process.env.REACT_APP_SERVER_HOST}/employees/${id}`, {
+    fetch(`${process.env.REACT_APP_SERVER_HOST}/employees/${id}`, {
       method: 'DELETE',
       headers: {
         Accept: 'application/json',

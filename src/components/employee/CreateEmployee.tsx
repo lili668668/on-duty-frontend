@@ -9,7 +9,7 @@ const CreateEmployee: React.FC<PropTypes> = (props) => {
   const [name, setName] = useState<string>('')
   const [lineId, setLineId] = useState<string>('')
   const handleCreate = useCallback(() => {
-    fetch(`http://${process.env.REACT_APP_SERVER_HOST}/employees`, {
+    fetch(`${process.env.REACT_APP_SERVER_HOST}/employees`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
