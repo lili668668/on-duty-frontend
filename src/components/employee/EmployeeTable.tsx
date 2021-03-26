@@ -51,7 +51,7 @@ const EmployeeTable: React.FC<PropTypes> = (props) => {
             if (index) {
               return array.slice(0, index).concat(target).concat(array.slice(index, array.length))
             }
-            return array
+            return employees
           })
         }, [])}
       >
