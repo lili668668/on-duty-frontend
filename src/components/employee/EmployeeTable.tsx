@@ -48,7 +48,10 @@ const EmployeeTable: React.FC<PropTypes> = (props) => {
             const array = employees.slice()
             const target = array.splice(response.source.index, 1)
             const index = response.destination?.index
-            return array.slice(0, index).concat(target).concat(array.slice(index, array.length))
+            if (index) {
+              return array.slice(0, index).concat(target).concat(array.slice(index, array.length))
+            }
+            return array
           })
         }, [])}
       >
